@@ -29,6 +29,7 @@ There are a few things you can configure, this is the most used list:<br/>
 ```ADMIN_EMAIL``` Email is needed to register for Let's Encrypt registration. Replace the default placeholder with an email of your organisation.<br/>
 ```INSTALL_NGINX``` and ```ENABLE_SSL``` must be set to ```True``` and the placeholder in ```ADMIN_EMAIL``` must be replaced with a valid email address for certbot installation<br/>
   _By enabling SSL though Let's Encrypt you agree to the following [policies](https://www.eff.org/code/privacy/policy)_ <br/>
+```CUSTOM_ADDONS``` Set the repository for your custom addons leave it blank if u dont have one<br/>
 
 #### 3. Make the script executable
 ```
