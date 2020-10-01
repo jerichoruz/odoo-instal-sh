@@ -1,11 +1,11 @@
-# [Odoo](https://www.odoo.com "Odoo's Homepage") Install Script for Ubuntu 20 with no ERRORS
+# [Odoo](https://www.odoo.com "Odoo's Homepage") 12 Install Script for Ubuntu 20 with no ERRORS
 
 This script is based on the install script from André Schenkels (https://github.com/aschenkels-ictstudio/openerp-install-scripts)
 but goes a bit further and has been improved. This script will also give you the ability to define an xmlrpc_port in the .conf file that is generated under /etc/
 This script can be safely used in a multi-odoo code base server because the default Odoo port is changed BEFORE the Odoo is started.
 
 ## Installing Nginx
-If you set the parameter ```INSTALL_NGINX``` to ```True``` you should also configure workers. Without workers you will probably get connection loss issues. Look at [the deployment guide from Odoo](https://www.odoo.com/documentation/13.0/setup/deploy.html) on how to configure workers.
+If you set the parameter ```INSTALL_NGINX``` to ```True``` you should also configure workers. Without workers you will probably get connection loss issues. Look at [the deployment guide from Odoo](https://www.odoo.com/documentation/12.0/setup/deploy.html) on how to configure workers.
 
 ## Installation procedure
 
