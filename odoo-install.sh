@@ -42,6 +42,8 @@ LONGPOLLING_PORT="8072"
 ENABLE_SSL="False"
 # Provide Email to register ssl certificate
 ADMIN_EMAIL="odoo@example.com"
+# Provide a repository to your odoo custom addons
+CUSTOM_ADDONS="https://username:password@github.com/username/repository.git"
 ##
 ###  WKHTMLTOPDF download links
 ## === Ubuntu Trusty x64 & x32 === (for other distributions please replace these two links,
