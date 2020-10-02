@@ -41,7 +41,7 @@ sudo ./odoo_install.sh
 ```
 
 ## Where should I host Odoo?
-VPS in conection to https://conectika.tech/standar-vps
+The ideal VPS for odoo community in México https://conectika.tech/standar-vps
 
 ## Minimal server requirements
 Odoo you should make sure to use at least 2GB of RAM. This script might fail with less resources too.
