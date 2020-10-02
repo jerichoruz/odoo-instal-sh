@@ -42,8 +42,9 @@ LONGPOLLING_PORT="8072"
 ENABLE_SSL="False"
 # Provide Email to register ssl certificate
 ADMIN_EMAIL="odoo@example.com"
-# Provide a repository to your odoo custom addons
-CUSTOM_ADDONS="https://username:password@github.com/username/repository.git"
+# Provide a repository to your odoo custom addons example:
+#CUSTOM_ADDONS="https://username:password@github.com/username/repository.git"
+CUSTOM_ADDONS=""
 ##
 ###  WKHTMLTOPDF download links
 ## === Ubuntu Trusty x64 & x32 === (for other distributions please replace these two links,
@@ -148,6 +149,13 @@ fi
 echo -e "\n---- Create custom module directory ----"
 sudo su $OE_USER -c "mkdir $OE_HOME/custom"
 sudo su $OE_USER -c "mkdir $OE_HOME/custom/addons"
+if [ ! -z "$CUSTOM_ADDONS" -a "$CUSTOM_ADDONS"!=" " ]; then
+   sudo git clone $CUSTOM_ADDONS $OE_HOME_EXT/custom/addons/
+else
+    echo -e "\n---- Custom module directory created empty----"
+fi
+
+
 
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
