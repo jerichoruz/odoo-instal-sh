@@ -43,7 +43,7 @@ ENABLE_SSL="False"
 # Provide Email to register ssl certificate
 ADMIN_EMAIL="odoo@example.com"
 # Provide a repository to your odoo custom addons example:
-#CUSTOM_ADDONS="https://username:password@github.com/username/repository.git"
+#CUSTOM_ADDONS="https://github.com/username/repository"
 CUSTOM_ADDONS=""
 ##
 ###  WKHTMLTOPDF download links
@@ -149,12 +149,21 @@ fi
 echo -e "\n---- Create custom module directory ----"
 sudo su $OE_USER -c "mkdir $OE_HOME/custom"
 sudo su $OE_USER -c "mkdir $OE_HOME/custom/addons"
+
 if [ ! -z "$CUSTOM_ADDONS" -a "$CUSTOM_ADDONS"!=" " ]; then
-   sudo git clone $CUSTOM_ADDONS $OE_HOME_EXT/custom/addons/
+    GITHUB_RESPONSE=$(sudo git clone $CUSTOM_ADDONS "/odoo/custom/addons")
+    while [[ $GITHUB_RESPONSE == *"Authentication"* ]]; do
+        echo "------------------------WARNING------------------------------"
+        echo "Your authentication with Github has failed! Please try again."
+        printf "In order to install your custom addons please authenticate "
+        echo "TIP: Press ctrl+c to stop this script."
+        echo "-------------------------------------------------------------"
+        echo " "
+        GITHUB_RESPONSE=$(sudo git clone $CUSTOM_ADDONS "/odoo/custom/addons")
+    done
 else
     echo -e "\n---- Custom module directory created empty----"
 fi
-
 
 
 echo -e "\n---- Setting permissions on home folder ----"
