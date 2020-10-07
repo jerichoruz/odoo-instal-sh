@@ -1,4 +1,4 @@
-# [Odoo](https://www.odoo.com "Odoo's Homepage") 12 Install Script for Ubuntu 20 with no ERRORS and custom addons from github
+# [Odoo](https://www.odoo.com "Odoo's Homepage") 12 Install Script for Ubuntu 20 with no ERRORS, WKHTMLTOPDF dependencies libpng12-0 SOLVED,and custom addons from github
 
 This script is based on the install script from André Schenkels (https://github.com/aschenkels-ictstudio/openerp-install-scripts)
 but goes a bit further and has been improved. This script will also give you the ability to define an xmlrpc_port in the .conf file that is generated under /etc/
